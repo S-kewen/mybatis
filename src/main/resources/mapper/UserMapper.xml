@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.mybatis.dao.UserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.boot.mybatis.entity.User">
+        <id column="id" property="id" />
+        <result column="type" property="type" />
+        <result column="state" property="state" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="remark" property="remark" />
+        <result column="add_time" property="addTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, type, state, username, remark, add_time
+    </sql>
+    <select id="list" parameterType="com.boot.mybatis.entity.User" resultType="java.util.HashMap">
+        select <include refid="Base_Column_List" /> from t_user
+        <where>
+            <if test="id!=null and id!=''">and id=#{id}</if>
+            <if test="type!=null and type!=''">and type=#{type}</if>
+            <if test="state!=null and state!=''">and state=#{state}</if>
+            <if test="username!=null and username!=''">and username=#{username}</if>
+            <if test="remark!=null and remark!=''">and remark=#{remark}</if>
+        </where>
+    </select>
+</mapper>
