@@ -20,3 +20,8 @@ MyBatis是一款優秀的基於java的持久層框架，它內部封裝了jdbc�
 * Hibernate
 
     是一個全表映射的框架。通常開發者只需定義好持久化對象到數據庫表的映射關系，就可以通過 Hibernate 提供的方法完成持久層操作。開發者並不需要熟練地掌握 SQL語句的編寫，Hibernate會根據制定的存儲邏輯，自動的生成對應的SQL，並調用JDBC接口來執行，所以其開發效率會高於MyBatis。然而Hibernate自身也存在著一些缺點，例如它在多表關聯時，對 SQL 查詢的支持較差；更新數據時，需要發送所有字段；不支持存儲過程；不能通過優化 SQL 來優化性能等。這些問題導致其只適合在場景不太復雜且對性能要求不高的項目中使用。
+
+## Contact Author
+石桂華(Skwen) https://blog.iskwen.com
+# END
+* Thank you for watching.
